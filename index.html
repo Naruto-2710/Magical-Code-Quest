@@ -31,19 +31,68 @@
 
 <pre>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
-int main() {
-    int a = 7;
-    int b = 3;
-    int station = (a * b) + (a - b);
+void toLowerCase(char str[]) {
+    for(int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+}
 
-    printf("Welcome, young wizard!\n");
-    printf("Your train awaits at Station: %d\n", station);
-    printf("Decode this Morse message to continue:\n");
-    printf(".... --- --. .-- .- .-. - ...\n");
+int verifyWizard(char name[]) {
+    char darkLord[] = "voldemort";
+
+    if(strcmp(name, darkLord) == 0) {
+        return 1;
+    }
 
     return 0;
 }
+
+int main() {
+
+    char answer[50];
+
+    printf("===========================================\n");
+    printf("🧙  WELCOME TO MAGICAL CODE QUEST 🧙\n");
+    printf("===========================================\n\n");
+
+    printf("⚡ First Challenge:\n");
+    printf("Who is the most powerful dark wizard of all time?\n");
+    printf("Hint: He who must not be named...\n\n");
+
+    printf("Enter your answer: ");
+    scanf("%s", answer);
+
+    toLowerCase(answer);
+
+    if(verifyWizard(answer)) {
+
+        printf("\n✨ Correct, young wizard! ✨\n\n");
+
+        printf("🚂 Hurry up! The Hogwarts Express waits at Platform 9¾.\n\n");
+        printf("📍 Your journey begins on the SECOND FLOOR.\n");
+        printf("📚 Search near the BOOKS ROOM.\n");
+        printf("🪜 Look carefully at the STAIRCASE.\n\n");
+
+        printf("🔎 There lies your hidden Platform (QR Code).\n");
+        printf("Scan it to unlock your passage to Hogwarts.\n");
+
+    } else {
+
+        printf("\n❌ Incorrect answer.\n");
+        printf("The Dark Lord laughs at your weakness...\n");
+        printf("Try again, brave wizard.\n");
+
+    }
+
+    printf("\n===========================================\n");
+
+    return 0;
+}
+
+
 </pre>
 
 
