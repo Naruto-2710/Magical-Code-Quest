@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magical Code Quest - Level 1</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+            font-family: Georgia, serif;
+            text-align: center;
+            padding: 50px;
+        }
+        pre {
+            background-color: #111;
+            padding: 20px;
+            text-align: left;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🧙 Magical Code Quest</h1>
+<hr>
+
+<h2>Level 1: Find the Station</h2>
+
+<p>Young wizard, your journey begins.</p>
+<p>Execute the following C program to discover your station number.</p>
+
+<pre>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void toLowerCase(char str[]) {
+    for(int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+}
+
+int verifyWizard(char name[]) {
+    char darkLord[] = "lord voldemort";
+
+    if(strcmp(name, darkLord) == 0) {
+        return 1;
+    }
+
+    return 0;
+}
+
+int main() {
+
+    char answer[50];
+
+    printf("===========================================\n");
+    printf("🧙  WELCOME TO MAGICAL CODE QUEST 🧙\n");
+    printf("===========================================\n\n");
+
+    printf("⚡ First Challenge:\n");
+    printf("Who is the most powerful dark wizard of all time?\n");
+    printf("Hint: He who must not be named...\n\n");
+
+    printf("Enter your answer: ");
+    scanf("%s", answer);
+
+    toLowerCase(answer);
+
+    if(verifyWizard(answer)) {
+
+        printf("\n✨ Correct, young wizard! ✨\n\n");
+
+        printf("🚂 Hurry up! The Hogwarts Express waits at Platform 9¾.\n\n");
+        printf("📍 Your journey begins on the GROUND FLOOR E WING.\n");
+        printf("📚 alongside VEHICLE PARKING.\n");
+        printf("🪜 Look carefully at the ROOM E-001.\n\n");
+
+        printf("🔎 There lies your hidden Platform (QR Code).\n");
+        printf("Scan it to unlock your passage to Hogwarts.\n");
+
+    } else {
+
+        printf("\n❌ Incorrect answer.\n");
+        printf("The Dark Lord laughs at your weakness...\n");
+        printf("Try again, brave wizard.\n");
+
+    }
+
+    printf("\n===========================================\n");
+
+    return 0;
+}
+
+
+</pre>
+
+
+
+</body>
+</html>
